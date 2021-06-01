@@ -8,13 +8,14 @@ using System.Collections.Generic;
 
 namespace Data
 {
-    public class ClienteContext : DbContext
+    public class Context : DbContext
     {
 
-        public ClienteContext : base("dbClientes"){
-            
-            
-            }
+        public Context() : base("dbProject")
+        {
+
+        } 
         public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Produto> Produto { get; set; }
     }
 }
