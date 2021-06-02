@@ -1,21 +1,20 @@
 ﻿using Data;
 using Domain;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Collections.Generic;
-using System.Data.Entity;
 
 namespace ConsoleApp
 {
-    public class Program
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            Console.WriteLine("Iniciando...");
-            var ctx = new Context();
+            Console.WriteLine("INICIANDO....");
 
+            var ctx = new DBContext();
 
             Cliente cli = new Cliente();
             cli.id = 1;
@@ -23,20 +22,16 @@ namespace ConsoleApp
             cli.email = "aachagas@yahoo.com.br";
             ctx.Clientes.Add(cli);
 
-           
-
-
             Produto prod = new Produto();
-            prod.CodProd = 1;
-            prod.Descricao = "Notebook";
-            prod.Preco = "1500";
+            prod.descricao = "Mouse USB";
+            prod.preco = 10.50;
+            prod.marca = "Microsoft";
             ctx.Produto.Add(prod);
-           
 
             ctx.SaveChanges();
-            Console.WriteLine("Fim...");
-            Console.ReadKey();
 
+            Console.WriteLine("FIM....");
+            Console.ReadKey();
         }
     }
 }

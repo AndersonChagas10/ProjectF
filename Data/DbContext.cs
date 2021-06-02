@@ -8,10 +8,10 @@ using System.Collections.Generic;
 
 namespace Data
 {
-    public class Context : DbContext
+    public class DBContext : DbContext
     {
 
-        public Context() : base("dbProject")
+        public DBContext() : base("dbProject")
         {
 
         } 
